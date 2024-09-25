@@ -52,6 +52,16 @@ function endTest() {
 
   // Reset the button
   var button = document.getElementById("btn");
-  button.innerHTML = "Start Test";
-  button.onclick = startTest;
+  button.innerHTML = "Reset Test";
+  button.onclick = resetTest;
+}
+
+function resetTest(typedWords, timeElapsed, wpm) {
+  document.getElementById("inputText").value = "";
+  document.getElementById("output").innerHTML = "";
+  document.getElementById("userInput").value = "";
+  document.getElementById("userInput").readOnly = false;
+  typedWords = 0;
+  timeElapsed = 0;
+  wpm = 0;
 }
