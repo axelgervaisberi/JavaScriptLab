@@ -12,6 +12,12 @@ function showWeatherDetails(event) {
       weatherInfo.innerHTML = `<h2>Weather in ${data.name}</h2>
                                <p>Temperature: ${data.main.temp} &deg;</p>
                                <p>Weather: ${data.weather[0].description}</p>`;
+    })
+    .catch((error) => {
+      console.error("Error fetching weather data:", error);
+      const weatherInfo = document.getElementById("weatherInfo");
+      weatherInfo.innerHTML =
+        "Error fetching weather data. Please try again later.";
     });
 }
 
